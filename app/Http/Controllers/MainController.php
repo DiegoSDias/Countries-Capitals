@@ -121,11 +121,7 @@ class MainController extends Controller
         $totalQuestions = session('totalQuestions');
         $correctAnswers = session('correctAnswers');
         $wrongAnswers = session('wrongAnswers');
-        if($correctAnswers == 0) {
-            $scoreFinal = 0;
-        } else {
-            $scoreFinal = ($totalQuestions / $correctAnswers) / 100;
-        }
+            $scoreFinal = ($correctAnswers / $totalQuestions) * 100;
 
         $data = [
             'totalQuestions' => $totalQuestions,
